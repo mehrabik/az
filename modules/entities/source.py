@@ -9,7 +9,7 @@ class Source(Entity):
             self.input_file = open(input_file)
         else:
             self.input_file = input_file
-        self.reader = csv.reader(self.input_file)
+        self.reader = csv.reader(self.input_file, encoding="utf8")
         next(self.reader) # skip header
 
     def __iter__(self):
